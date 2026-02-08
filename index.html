@@ -647,23 +647,25 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12 py-12">
 
             <!-- Category Tabs -->
-            <div class="flex flex-wrap gap-4 mb-12 justify-center">
-                <button class="px-6 py-2 rounded-full bg-brand-500 text-white font-medium text-sm">All Works</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-colors">Graphic
+            <div class="flex flex-wrap gap-4 mb-12 justify-center" id="portfolioFilters">
+                <button onclick="filterProjects('all', this)"
+                    class="filter-btn px-6 py-2 rounded-full bg-brand-500 text-white font-medium text-sm transition-all shadow-md">All
+                    Works</button>
+                <button onclick="filterProjects('graphic', this)"
+                    class="filter-btn px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-all hover:shadow-sm">Graphic
                     Design</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-colors">Photography</button>
-                <button
-                    class="px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-colors">Illustration</button>
+                <button onclick="filterProjects('photo', this)"
+                    class="filter-btn px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-all hover:shadow-sm">Photography</button>
+                <button onclick="filterProjects('illustration', this)"
+                    class="filter-btn px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-all hover:shadow-sm">Illustration</button>
             </div>
 
             <!-- Masonry Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
 
                 <!-- Project 1: Books -->
-                <div class="group cursor-pointer" onclick="openProjectDetail(this)" data-title="ECD English Textbooks"
-                    data-category="Editorial Design • InDesign"
+                <div class="group cursor-pointer portfolio-item" data-filter="graphic" onclick="openProjectDetail(this)"
+                    data-title="ECD English Textbooks" data-category="Editorial Design • InDesign"
                     data-image="https://placehold.co/800x600/e3ebe0/5a6b4e?text=ECD+Textbooks"
                     data-desc="Complete layout and typographic design for English textbooks (Grades 7-12). Focus on readability, engaging visuals for students, and structured content organization for clear learning paths.">
                     <div class="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3] mb-4 relative">
@@ -683,8 +685,8 @@
                 </div>
 
                 <!-- Project 2: Camp -->
-                <div class="group cursor-pointer" onclick="openProjectDetail(this)" data-title="English Camp Themes"
-                    data-category="Event Design • Large Format"
+                <div class="group cursor-pointer portfolio-item" data-filter="graphic" onclick="openProjectDetail(this)"
+                    data-title="English Camp Themes" data-category="Event Design • Large Format"
                     data-image="https://placehold.co/800x600/d6d3d1/5a6b4e?text=Camp+Backdrops"
                     data-desc="Immersive visual themes for over 20+ English camps. Includes large-scale backdrops, stage props, and thematic signage designed to create an engaging atmosphere for participants.">
                     <div class="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3] mb-4 relative">
@@ -704,7 +706,8 @@
                 </div>
 
                 <!-- Project 3: Character -->
-                <div class="group cursor-pointer" onclick="openProjectDetail(this)" data-title="Chibi Characters"
+                <div class="group cursor-pointer portfolio-item" data-filter="illustration"
+                    onclick="openProjectDetail(this)" data-title="Chibi Characters"
                     data-category="Digital Illustration • Procreate"
                     data-image="https://placehold.co/800x600/f5f5f4/5a6b4e?text=Chibi+Character"
                     data-desc="Custom character designs in Chibi/SD style for private clients. Focusing on expressive features, vibrant colors, and unique personality traits captured in a compact, cute form factor.">
@@ -725,8 +728,8 @@
                 </div>
 
                 <!-- Project 4: Photo -->
-                <div class="group cursor-pointer" onclick="openProjectDetail(this)" data-title="Orientation Event"
-                    data-category="Photography • Editing"
+                <div class="group cursor-pointer portfolio-item" data-filter="photo" onclick="openProjectDetail(this)"
+                    data-title="Orientation Event" data-category="Photography • Editing"
                     data-image="https://placehold.co/800x600/e5e7eb/5a6b4e?text=Event+Photography"
                     data-desc="Event photography capturing candid moments, atmosphere, and key interactions. Post-processing done in Lightroom to enhance tone and mood while maintaining natural skin tones.">
                     <div class="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3] mb-4 relative">
@@ -746,8 +749,8 @@
                 </div>
 
                 <!-- Project 6: Video -->
-                <div class="group cursor-pointer" onclick="openProjectDetail(this)" data-title="Educational Videos"
-                    data-category="Video Editing • Premiere Pro"
+                <div class="group cursor-pointer portfolio-item" data-filter="graphic" onclick="openProjectDetail(this)"
+                    data-title="Educational Videos" data-category="Video Editing • Premiere Pro"
                     data-image="https://placehold.co/800x600/e0e7ff/5a6b4e?text=Video+Content"
                     data-desc="Editing and motion graphics for educational video series. Focused on pacing, visual aids for learning retention, and clear audio mixing.">
                     <div class="rounded-2xl overflow-hidden bg-stone-100 aspect-[4/3] mb-4 relative">
