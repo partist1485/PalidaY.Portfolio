@@ -1281,6 +1281,38 @@
             if (event.key === "Escape") closeProjectDetail();
         });
     </script>
+    <script>
+        // Filter Projects
+        function filterProjects(category, btn) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update Buttons
+            buttons.forEach(b => {
+                b.className = "filter-btn px-6 py-2 rounded-full bg-white border border-stone-200 text-stone-600 hover:bg-stone-50 font-medium text-sm transition-all hover:shadow-sm";
+            });
+            btn.className = "filter-btn px-6 py-2 rounded-full bg-brand-500 text-white font-medium text-sm transition-all shadow-md";
+
+            // Filter Items
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-filter') === category) {
+                    item.classList.remove('hidden');
+                    item.classList.add('block');
+                    // Add animation for reappearing
+                    item.animate([
+                        { opacity: 0, transform: 'scale(0.9)' },
+                        { opacity: 1, transform: 'scale(1)' }
+                    ], {
+                        duration: 300,
+                        easing: 'ease-out'
+                    });
+                } else {
+                    item.classList.add('hidden');
+                    item.classList.remove('block');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
