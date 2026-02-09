@@ -1198,12 +1198,21 @@
                 <span class="px-4 py-2 bg-white border border-stone-200 text-stone-600 text-xs rounded-full shadow-sm">Creative Thinking</span>
             `;
 
-            // 4. Generate Gallery Feed with PLACEHOLDER IMAGES
-            const galleryImages = [
-                "https://placehold.co/1200x800/f5f5f4/5a6b4e?text=Mockup+View+1",
-                "https://placehold.co/1200x800/e5e7eb/5a6b4e?text=Detail+Shot",
-                "https://placehold.co/1200x800/d6d3d1/5a6b4e?text=Process+View"
-            ];
+            // 4. Generate Gallery Feed
+            let galleryImages = [];
+
+            if (title === 'Chibi Character') {
+                galleryImages = [
+                    "photo/00000.png",
+                    "photo/01 Giveaway Sticker.png"
+                ];
+            } else {
+                galleryImages = [
+                    "https://placehold.co/1200x800/f5f5f4/5a6b4e?text=Mockup+View+1",
+                    "https://placehold.co/1200x800/e5e7eb/5a6b4e?text=Detail+Shot",
+                    "https://placehold.co/1200x800/d6d3d1/5a6b4e?text=Process+View"
+                ];
+            }
 
             galleryContainer.innerHTML = '';
 
