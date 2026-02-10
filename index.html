@@ -1223,11 +1223,15 @@
             heroImage.src = image;
 
             // 3. Populate Tools
-            toolsContainer.innerHTML = `
-                <span class="px-4 py-2 bg-white border border-stone-200 text-stone-600 text-xs rounded-full shadow-sm">Procreate</span>
-                <span class="px-4 py-2 bg-white border border-stone-200 text-stone-600 text-xs rounded-full shadow-sm">Character Design</span>
-                <span class="px-4 py-2 bg-white border border-stone-200 text-stone-600 text-xs rounded-full shadow-sm">Creative Thinking</span>
-            `;
+            let tools = ["Procreate", "Character Design", "Creative Thinking"]; // Default
+
+            if (title === 'Restaurant Menu Design 1') {
+                tools = ["Adobe Illustrator", "Adobe Photoshop", "Magazine design", "Menu"];
+            }
+
+            toolsContainer.innerHTML = tools.map(t =>
+                `<span class="px-4 py-2 bg-white border border-stone-200 text-stone-600 text-xs rounded-full shadow-sm">${t}</span>`
+            ).join('');
 
             // 4. Generate Gallery Feed
             let galleryImages = [];
